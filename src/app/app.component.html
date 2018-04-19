@@ -1,20 +1,85 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<nav class="navbar navbar-expand-sm navbar-dark fixed-top justify-content-between">
+  <ul class="navbar-nav">
+      <li class="nav-item">
+          <img id="dice" class = "navIcons" data-toggle="modal" data-target="#diceModal" src="assets/dice-twenty.svg" alt="Dice">
+      </li>
+      <li class="nav-item">
+          <img id="person" class = "navIcons" src="assets/person.svg" alt="Characters">
+      </li>
+  </ul>
+  <a class="navbar-brand" href="#">{{title}}</a>
+  <!-- <img src="pathmasterLogo.png" alt="Logo" style="width:40px;"> -->
+  <div class="menu-button navbar-text" onclick="iconAnim(this);openCloseNav()">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+  </div>
+</nav>
 
+
+<div id="mySidenav" class="sidenav">
+  <!-- <a href="javascript:void(0)" class="closebtn" onclick="openCloseNav()">&times;</a> -->
+  <iframe id="prd" src="http://paizo.com/pathfinderRPG/prd/"></iframe>
+</div>
+
+<!-- Add all page content inside this div if you want the side nav 
+   to push page content to the left (not used if you only want 
+   the sidenav to sit on top of the page -->
+
+<div id="main">
+
+</div>
+
+<!-- PDF Viewer -->
+<object  id="pdfViewer" class = 'pdf' data="./assets/guide.pdf" type="application/pdf">
+  <iframe id="pdfViewer" class='pdf' src="./assets/guide.pdf">
+      This browser does not support PDFs. Please download the PDF to view it: 
+      <a href="assets/guide.pdf">Download PDF</a>
+  </iframe>
+</object>
+
+<div class="modal fade" id="diceModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Roll Some Dice</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+          <div id="diceForm" class="form-inline" width="100%">
+              <label for="num" style="margin-right: 10px">How many?</label>
+              <input type="text" class="form-control" id="num" style="width: 75px; margin-right: 10px">
+              <label for=sides style="margin-right: 10px">Sides?</label>
+              <select class="form-control" id="sides" style="width: 75px; margin-right: 10px">
+                  <option value="0"></option>
+                  <option value="4">d4</option>
+                  <option value="6">d6</option>
+                  <option value="8">d8</option>
+                  <option value="10">d10</option>
+                  <option value="12">d12</option>
+                  <option value="20">d20</option>
+              </select>
+              <button onclick="displayDiceResult()" type="submit" class="btn btn-primary" style="margin-right: 10px">Roll!</button>
+              <button onclick="clearDiceResults()" type="submit" class="btn btn-danger">&times;</button>
+          </div>
+
+          <div id="diceAlert" class="alert alert-danger alert-dismissible collapse" style="margin-top: 10px">
+              <button type="button" class="close" onclick="$('#diceAlert').hide();">&times;</button>
+              <strong>Error!</strong> Make sure the number of dice is between 1 and 20 and you selected a number of sides.
+          </div>
+
+          <div id="diceResult"></div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
