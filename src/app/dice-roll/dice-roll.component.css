@@ -1,0 +1,15 @@
+#num, #sides{
+    width: 80px;
+    margin-right: 10px;
+}
+
+#diceForm > label {
+    margin-right: 10px;
+}
+.btn-primary {
+    margin-right: 10px;
+}
+
+.alert-danger {
+    margin-top: 5px;
+}

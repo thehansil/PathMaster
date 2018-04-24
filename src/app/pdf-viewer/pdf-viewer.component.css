@@ -1,0 +1,11 @@
+#pdfViewer {
+    /* display:inline-block; */
+    /* position: absolute;  */
+    margin: 10px;
+    /* height: 500px;  */
+    height: 100vh;
+    width: 700px; 
+    border: none;
+    padding-top: 50px;
+    color: white;
+} 

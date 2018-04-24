@@ -1,0 +1,55 @@
+<div class="modal fade" id="diceModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Roll Some Dice</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form #diceForm="ngForm">
+          <div id="diceForm" class="form-inline" width="100%">
+            <label for="num">How many?</label>
+            <input type="number" [(ngModel)]="model.numberOfDice" min="1" max="20" name="numberOfDice" class="form-control" id="num" #numberOfDice="ngModel" required>
+            <label for=sides>Sides?</label>
+            <select class="form-control" [(ngModel)]="model.sidesOfDice" name="sidesOfDice" id="sides" #sidesOfDice="ngModel" required>
+              <option *ngFor="let die of dice" [ngValue]="die">{{die}}</option>
+            </select>
+            <button (click)="getRandomRoll(model.numberOfDice,model.sidesOfDice)" type="submit" class="btn btn-primary">Roll!</button>
+            <button (click)="clearDiceResults()" type="submit" class="btn btn-danger">&times;</button>
+          </div>
+
+          <div *ngIf="numberOfDice.invalid && (numberOfDice.dirty || numberOfDice.touched)" class="alert alert-danger">
+            <div *ngIf="numberOfDice.errors.required">
+              Number of Dice is required.
+            </div>
+            <div *ngIf="numberOfDice.errors.min">
+              Min 1
+            </div>
+            <div *ngIf="numberOfDice.errors.max">
+              Max 20
+            </div>
+          </div>
+          <div *ngIf="sidesOfDice.invalid && (sidesOfDice.dirty || sidesOfDice.touched)" class="alert alert-danger">
+            <div *ngIf="sidesOfDice.errors.required">
+              Sides of Dice is required.
+            </div>
+          </div>
+
+        </form>
+
+        <div *ngFor="let res of results">{{res}}</div>
+
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
