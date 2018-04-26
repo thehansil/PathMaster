@@ -4,12 +4,12 @@
           <img id="dice" class = "navIcons" data-toggle="modal" data-target="#diceModal" src="assets/dice-twenty.svg" alt="Dice">
       </li>
       <li class="nav-item">
-          <img id="person" class = "navIcons" src="assets/person.svg" alt="Characters">
+          <a routerLink="/characters"><img id="person" class = "navIcons" src="assets/person.svg" alt="Characters"></a>
       </li>
   </ul>
-  <a class="navbar-brand" href="#">{{title}}</a>
+  <a class="navbar-brand" routerLink="">{{title}}</a>
   <!-- <img src="pathmasterLogo.png" alt="Logo" style="width:40px;"> -->
-  <div class="menu-button navbar-text" onclick="iconAnim(this);openCloseNav()">
+  <div class="menu-button navbar-text" (click)="openCloseNav()">
       <div class="bar1"></div>
       <div class="bar2"></div>
       <div class="bar3"></div>
@@ -23,5 +23,5 @@
 </div>
 
 
-<app-pdf-viewer></app-pdf-viewer>
+<router-outlet></router-outlet>
 <app-dice-roll></app-dice-roll>

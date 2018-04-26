@@ -6,6 +6,8 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { DiceRollComponent } from './dice-roll/dice-roll.component';
 import { PdfViewerComponent } from './pdf-viewer/pdf-viewer.component';
+import { CharactersComponent } from './characters/characters.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 
 @NgModule({
@@ -13,10 +15,12 @@ import { PdfViewerComponent } from './pdf-viewer/pdf-viewer.component';
     AppComponent,
     DiceRollComponent,
     PdfViewerComponent,
+    CharactersComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
