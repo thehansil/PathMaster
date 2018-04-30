@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DiceRollComponent implements OnInit {
 
-  private readonly dice = ['d4', 'd6', 'd8', 'd10', 'd12', 'd20'];
+  private readonly dice = ['d4', 'd6', 'd8', 'd10', 'd12', 'd20', 'd100'];
 
   private model = {
     numberOfDice: 1,

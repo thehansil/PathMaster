@@ -18,10 +18,15 @@ export class InitiativeComponent implements OnInit {
     this.model.rolls.push({name: 'Misha', roll: '15'});
     this.model.rolls.push({name: 'Xavier', roll: '12'});
     this.model.rolls.push({name: 'Adria', roll: '20'});
+    this.sort();
   }
 
   private add(name: string, roll: string) {
     this.model.rolls.push({name, roll});
+    this.sort();
+  }
+
+  private sort() {
     this.model.rolls.sort(function (a, b) {
       const rollA = parseFloat(a.roll);
       const rollB = parseFloat(b.roll);

@@ -1,8 +1,11 @@
-#num, #sides{
+#num {
     width: 80px;
     margin-right: 10px;
 }
-
+#sides {
+    width: 90px;
+    margin-right: 10px;
+}
 #diceForm > label {
     margin-right: 10px;
 }
