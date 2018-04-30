@@ -1,0 +1,37 @@
+<div id="initiative">
+  <h2>Initiative Counter</h2>
+  <form #initiativeForm="ngForm">
+    <div id="initiativeForm" class="form-inline" width="100%">
+      <input type="text"
+             placeholder="Who?"
+             [(ngModel)]="model.rolls.name"
+             name="name" 
+             class="form-control"
+             id="name"
+             #name="ngModel"
+             required>
+      <input type="number"
+             placeholder="Roll?"
+             [(ngModel)]="model.rolls.roll"
+             min="1"
+             name="roll"
+             class="form-control"
+             id="roll"
+             #roll="ngModel"
+             required>
+      <button (click)="add(model.rolls.name,model.rolls.roll)" type="submit" class="btn btn-primary">Add</button>
+      <button (click)="clearRolls()" type="submit" class="btn btn-danger">&times;</button>
+    </div>
+  </form>
+  <div id="rolls" class="card text-white bg-dark">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item bg-dark" *ngFor="let roll of model.rolls" >{{roll.name}} ({{roll.roll}})
+          <button type="button" (click)="clearRoll(roll.name,roll.roll)">
+              <span>&times;</span>
+          </button>
+      </li>
+      
+    </ul>
+    
+  </div>
+</div>

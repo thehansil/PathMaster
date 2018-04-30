@@ -12,9 +12,8 @@ export class DiceRollComponent implements OnInit {
   private model = {
     numberOfDice: 1,
     sidesofDice: null,
+    results: [],
   };
-
-  private results = [];
 
   constructor() { }
 
@@ -38,7 +37,7 @@ export class DiceRollComponent implements OnInit {
     let total = 0;
     if (numberOfDice === 1) {
         const current = Math.floor(Math.random() * (sides)) + 1;
-        this.results.unshift(result + current.toString());
+        this.model.results.unshift(result + current.toString());
     } else {
         for (let i = 0; i < numberOfDice; ++i) {
             const current = Math.floor(Math.random() * (sides)) + 1;
@@ -50,12 +49,12 @@ export class DiceRollComponent implements OnInit {
             }
             total += current;
         }
-        this.results.unshift(result + total.toString());
+        this.model.results.unshift(result + total.toString());
     }
   }
 
   private clearDiceResults() {
-    this.results = [];
+    this.model.results = [];
   }
 }
 

@@ -5,9 +5,11 @@ import { FormsModule } from '@angular/forms';
 // Components
 import { AppComponent } from './app.component';
 import { DiceRollComponent } from './dice-roll/dice-roll.component';
-import { PdfViewerComponent } from './pdf-viewer/pdf-viewer.component';
+import { PdfViewerComponent } from './dashboard/pdf-viewer/pdf-viewer.component';
 import { CharactersComponent } from './characters/characters.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { InitiativeComponent } from './dashboard/initiative/initiative.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -16,6 +18,8 @@ import { AppRoutingModule } from './/app-routing.module';
     DiceRollComponent,
     PdfViewerComponent,
     CharactersComponent,
+    InitiativeComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
