@@ -28,10 +28,8 @@ export class InitiativeComponent implements OnInit {
 
   private sort() {
     this.model.rolls.sort(function (a, b) {
-      const rollA = parseFloat(a.roll);
-      const rollB = parseFloat(b.roll);
-      if (rollA > rollB) { return -1; }
-      if (rollA < rollB) { return 1; }
+      if (parseFloat(a.roll) > parseFloat(b.roll)) { return -1; }
+      if (parseFloat(a.roll) < parseFloat(b.roll)) { return 1; }
       return 0;
     });
   }
