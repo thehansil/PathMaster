@@ -5,10 +5,10 @@ var MongoClient = require('mongodb').MongoClient;
 
 
 app.get('/api/v1/getit', (req,res) => 
-  MongoClient.connect('mongodb://localhost:27017', function (err, db) {
+  MongoClient.connect('mongodb+srv://jhansil:pa77word@pathmaster-ac6vm.mongodb.net/test', function (err, db) {
     if (err) throw err;
     var dbo = db.db('test');
-    dbo.collection('movie').findOne({name: 'jacob'},(function (err, result) {
+    dbo.collection('customers').findOne({name: 'Company Inc'},(function (err, result) {
       if (err) throw err;
 
       console.log(result.name);
