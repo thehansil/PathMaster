@@ -7,14 +7,14 @@
         {
             "type": "chrome",
             "request": "launch",
-            "name": "Launch Chrome",
+            "name": "Angular App",
             "url": "http://localhost:4200",
             "webRoot": "${workspaceFolder}"
         },
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
+            "name": "Express App",
             "program": "${workspaceFolder}/express/server.js"
         }
     ]

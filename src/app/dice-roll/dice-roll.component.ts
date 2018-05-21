@@ -41,7 +41,6 @@ export class DiceRollComponent implements OnInit {
     } else {
         for (let i = 0; i < numberOfDice; ++i) {
             const current = Math.floor(Math.random() * (sides)) + 1;
-            console.log(current);
             if (i === numberOfDice - 1) {
                 result += current.toString() + '= ';
             } else {
