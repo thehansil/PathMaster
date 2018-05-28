@@ -22,7 +22,8 @@
     "@angular/platform-browser": "^5.2.11",
     "@angular/platform-browser-dynamic": "^5.2.11",
     "@angular/router": "^5.2.11",
-    "core-js": "^2.5.6",
+    "@ng-bootstrap/ng-bootstrap": "^2.0.0",
+    "core-js": "^2.5.7",
     "mongodb": "^3.0.8",
     "rxjs": "^5.5.11",
     "zone.js": "^0.8.19"
