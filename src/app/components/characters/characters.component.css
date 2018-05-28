@@ -1,5 +1,6 @@
-p {
+.wrap {
+    margin-top: 60px;
+}
+div {   
     color: white;
-    padding-top: 50px;
-    margin: 10px;
 }

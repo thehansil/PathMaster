@@ -11,6 +11,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { InitiativeComponent } from './components/dashboard/initiative/initiative.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
+// Services
+import { CharacterService } from './services/character.service';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +29,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     FormsModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [CharacterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

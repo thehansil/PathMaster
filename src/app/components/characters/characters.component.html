@@ -1,3 +1,10 @@
-<p>
-  characters works!
-</p>
+<div class="wrap"></div>
+<select>
+  <option *ngFor="let char of characters" value="{{char.name}}">{{char.name}}</option>
+</select>
+
+<div *ngFor="let char of characters">
+  <ul>
+    <li>{{char.name}} | {{char.class}}</li>
+  </ul>
+</div>
