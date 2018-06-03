@@ -2,7 +2,7 @@ export const enum Class {
     Cleric = 'Cleric',
     Warrior = 'Warrior',
     Magus = 'Magus',
-    Illusionist = 'Illusionist',
+    Arcanist = 'Arcanist',
     Ranger = 'Ranger',
     Rogue = 'Rogue',
     Wizard = 'Wizard',
