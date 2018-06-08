@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 // Components
-import { AppComponent } from './components/app.component';
+import { AppComponent } from './app.component';
 import { DiceRollComponent } from './components/dice-roll/dice-roll.component';
 import { PdfViewerComponent } from './components/dashboard/pdf-viewer/pdf-viewer.component';
 import { CharactersComponent } from './components/characters/characters.component';
